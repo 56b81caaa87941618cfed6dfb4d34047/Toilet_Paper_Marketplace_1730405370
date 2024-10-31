@@ -100,15 +100,20 @@ INSTRUCTION: The feature sections are organised in a grid of two rows, each with
 </template>
 
 <script>
+import { ref } from 'vue'
+
 export default {
     name: "PurpleFeatureGridComponent",
-    data() {
+    setup() {
+        const expanded = ref(false)
+        const tab = ref(null)
+
         return {
-            expanded: false,
-            tab: null,
-        };
-    },
-};
+            expanded,
+            tab
+        }
+    }
+}
 </script>
 
 <style scoped>

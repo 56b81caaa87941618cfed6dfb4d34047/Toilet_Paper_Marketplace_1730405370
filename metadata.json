@@ -4,5 +4,6 @@
     "project_description": "A toilett paper marketplace",
     "creation_time": "2024-10-31 20:09:30.752737",
     "current_state": "The current state of the application has a navbar and a header",
-    "selected_starter_template_id": "stellar"
+    "selected_starter_template_id": "stellar",
+    "frontend_theme_prompt": "The image utilizes a vivid color scheme of pinks and purples with a futuristic, otherworldly style featuring celestial bodies and surreal landscapes. The design creates a dramatic, fantastical effect with glowing highlights and contrasting shadows."
 }

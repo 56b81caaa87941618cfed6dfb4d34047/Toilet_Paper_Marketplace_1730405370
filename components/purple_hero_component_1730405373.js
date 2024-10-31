@@ -66,4 +66,5 @@ export default {
 </script>
 
 <style scoped>
+/* Component-specific styles can be added here */
 </style>

@@ -110,11 +110,11 @@ INSTRUCTION: 3. Desktop sign-in and sign-up links on the right.
           <nav
             id="mobile-nav"
             class="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out"
-            x-ref="mobileNav"
+            ref="mobileNav"
             :style="expanded ? 'max-height: ' + $refs.mobileNav.scrollHeight + 'px; opacity: 1' : 'max-height: 0; opacity: .8'"
-            @click.outside="expanded = false"
-            @keydown.escape.window="expanded = false"
-            x-cloak
+            v-click-outside="() => expanded = false"
+            @keydown.esc="expanded = false"
+            v-cloak
           >
             <ul id="mobile-nav-list" class="border border-transparent rounded-lg px-4 py-1.5 [background:linear-gradient(theme(colors.slate.900),_theme(colors.slate.900))_padding-box,_conic-gradient(theme(colors.slate.400),_theme(colors.slate.700)_25%,_theme(colors.slate.700)_75%,_theme(colors.slate.400)_100%)_border-box]">
               <li>
@@ -149,5 +149,20 @@ export default {
       tab: null,
     };
   },
+  directives: {
+    clickOutside: {
+      bind(el, binding) {
+        el.clickOutsideEvent = function(event) {
+          if (!(el === event.target || el.contains(event.target))) {
+            binding.value(event, el);
+          }
+        };
+        document.body.addEventListener('click', el.clickOutsideEvent);
+      },
+      unbind(el) {
+        document.body.removeEventListener('click', el.clickOutsideEvent);
+      }
+    }
+  }
 };
 </script>

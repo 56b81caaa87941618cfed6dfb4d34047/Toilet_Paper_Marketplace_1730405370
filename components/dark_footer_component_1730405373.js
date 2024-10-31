@@ -233,7 +233,7 @@ INSTRUCTION: 5. The fifth column covers legal information such as the refund pol
 
 <script>
 export default {
-  name: "dark_footer_component_1730405373",
+  name: "dark-footer-component-1730405373",
   data() {
     return {
       expanded: false,
